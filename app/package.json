@@ -11,7 +11,8 @@
     "postinstall": "nuxt prepare",
     "test": "vitest --config ./configs/vitest.config.ts",
     "test:ui": "vitest --ui --config ./configs/vitest.config.ts",
-    "test:coverage": "vitest run --coverage --config ./configs/vitest.config.ts"
+    "test:coverage": "vitest run --coverage --config ./configs/vitest.config.ts",
+    "deploy": "nuxt generate && cd .output/public/ && aws s3 sync . s3://gitops-app-dev-static/"
   },
   "devDependencies": {
     "@cdktf/provider-aws": "19.56.0",
